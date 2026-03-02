@@ -8,9 +8,9 @@ public class DatabaseConnectionManager {
     private static DatabaseConnectionManager instance;
     private Connection connection;
 
-    private static final String URL = "jdbc:mysql://localhost:3306/parking_lot_db";
-    private static final String USER = "root";
-    private static final String PASSWORD = "1234"; // Update this
+    private static final String URL = ConfigLoader.getProperty("db.url");
+    private static final String USER = ConfigLoader.getProperty("db.username");
+    private static final String PASSWORD = ConfigLoader.getProperty("db.password");
 
     private DatabaseConnectionManager() throws SQLException {
         try {
